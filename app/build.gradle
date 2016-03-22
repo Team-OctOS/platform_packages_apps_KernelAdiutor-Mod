@@ -28,10 +28,16 @@ android {
 
     signingConfigs {
         debug {
-            storeFile file("debugKey.jks")
-            storePassword "debug123"
-            keyAlias "debug"
-            keyPassword "debug123"
+            storeFile file("TeamOctOs_testing.jks")
+            storePassword "password"
+            keyAlias "TeamOctOs_testing"
+            keyPassword "password"
+        }
+        release {
+            storeFile file("TeamOctOs_testing.jks")
+            storePassword "password"
+            keyAlias "TeamOctOs_testing"
+            keyPassword "password"
         }
     }
 
@@ -46,6 +52,7 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             resValue "string", "APP_UPDATE_URL", "https://raw.githubusercontent.com/yoinx/kernel_adiutor/master/download/app/app-release.json"
+            signingConfig signingConfigs.release
         }
     }
     lintOptions {
